@@ -24,7 +24,7 @@ router.route('/add').post((req, res) => {
     customerName,
     amount,
     totalPaid,
-    datePaid
+    datePaid,
   });
 
   newInvoice.save()
@@ -34,6 +34,36 @@ router.route('/add').post((req, res) => {
     .catch(err => {
         return res.status(400).json('Error: ' + err);
     });
+});
+
+router.route("/:id").get((req, res) => {
+  Invoice.findById(req.params.id)
+    .then(invoice => res.json(invoice))
+    .catch(err => res.status(400).json("Error: " + err));
+});
+
+router.route("/:id").delete((req, res) => {
+  Invoice.findByIdAndDelete(req.params.id)
+    .then(() => res.json("Invoice deleted!"))
+    .catch(err => res.status(400).json("Error: " + err));
+});
+
+router.route("/update/:id").post((req, res) => {
+  Invoice.findById(req.params.id)
+    .them(invoice => {
+      invoice.username = req.body.username;
+      invoice.invoiceNumber = req.body.invoiceNumber;
+      invoice.paymentDate = req.body.paymentDate;
+      invoice.customerName = req.body.customerName;
+      invoice.amount = req.body.amount;
+      invoice.totalPaid = req.body.totalPaid;
+      invoice.datePaid = req.body.datePaid;
+
+      invoice.save()
+        .then(() => res.json("Invoice updated!"))
+        .catch(err => res.status(400).json("Error: " + err));
+    })
+    .catch(err => res.status(400).json("Error: " + err));
 });
 
 module.exports = router;
