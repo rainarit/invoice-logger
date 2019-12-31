@@ -1,10 +1,22 @@
 import React from 'react';
+import {BrowserRouter as Router, Route} from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css"
+import Navbar from "./components/navbar.component";
+import InvoicesList from "./components/invoices-list.component";
+import Editinvoice from "./components/edit-invoices.component";
+import CreateInvoice from "./components/create-invoice.component";
+import CreateUser from "./components/create-user.component";
 
 function App() {
   return (
-    <div className="container">
-      Hello world!
-    </div>
+    <Router>
+      <Navbar />
+      <br/>
+      <Route path = "/" exact component = {InvoicesList} />
+      <Route path = "/edit/:id" exact component = {Editinvoice} />
+      <Route path = "/create" exact component = {CreateInvoice} />
+      <Route path = "/user" exact component = {CreateUser} />
+    </Router>
   );
 }
 
