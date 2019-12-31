@@ -1,6 +1,6 @@
 import React from 'react';
-import {BrowserRouter as Router, Route} from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css"
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./components/navbar.component";
 import InvoicesList from "./components/invoices-list.component";
 import Editinvoice from "./components/edit-invoice.component";
