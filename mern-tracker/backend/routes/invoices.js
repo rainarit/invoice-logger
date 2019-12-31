@@ -3,7 +3,7 @@ const router = require('express').Router();
 let Invoice = require('../models/invoice.model');
 
 router.route('/').get((req, res) => {
-  book.find()
+  Invoice.find()
     .then(invoices => res.json(invoices))
     .catch(err => res.status(400).json('Error: ' + err));
 });
