@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css"
 import Navbar from "./components/navbar.component";
 import InvoicesList from "./components/invoices-list.component";
-import Editinvoice from "./components/edit-invoices.component";
+import Editinvoice from "./components/edit-invoice.component";
 import CreateInvoice from "./components/create-invoice.component";
 import CreateUser from "./components/create-user.component";
 
