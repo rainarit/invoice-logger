@@ -16,6 +16,9 @@ mongoose.connect(uri, {
     useCreateIndex: true,
     useUnifiedTopology: true
 });
+
+mongoose.Promise = global.Promise
+
 const connection = mongoose.connection;
 connection.once("open", () => {
   console.log("MongoDB database connection established successfully!");
