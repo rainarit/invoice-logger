@@ -32,7 +32,7 @@ export default class InvoiceList extends Component {
             .then(response => {
                 this.setState({
                     invoices: response.data
-                });
+                })
             })
             .catch((error) => {
                 console.log(error);
