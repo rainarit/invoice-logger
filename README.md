@@ -1,2 +1,3 @@
-# tracker-application
-Web App using MongoDB, Express, React, and Node.js
+# Invoice Logger 📄 : Web App made via MERN stack
+## App Walkthough Image
+<img src="./walkthrough.png" width=1000><br>
